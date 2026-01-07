@@ -45,13 +45,13 @@ B. Labs
 
 2. sundries/detach.c, I tried out detached threads.
 
-3. sundres/parallel.c, demonstrates how to utilize two threads for parallel
+3. sundries/parallel.c, demonstrates how to utilize two threads for parallel
    computing.
 
-4. sundres/mutex.c, a demonstration of two threads competing to modify a global
+4. sundries/mutex.c, a demonstration of two threads competing to modify a global
    variable simultaneously, using a Mutex to ensure an accurate result.
 
-5. sundres/wake.c,
+5. sundries/wake.c,
    In multithreading, relying solely on 'locks' is not enough. If a consumer 
    thread finds the basket empty. It cannnot just keep staring at it in an 
    infinite loop (which wastes too much CPU time).
