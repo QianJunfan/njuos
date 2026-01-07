@@ -41,9 +41,9 @@ memory. Thus, threads in Linux are often called LWPs (Lightweight Processes).
 
 B. Labs
 
-1. sundries/mythread.c, my first multi-threading example.
+1. sundries/thread.c, my first multi-threading example.
 
-2. sundries/myfork.c, I tried out detached threads.
+2. sundries/detach.c, I tried out detached threads.
 
 3. sundres/parallel.c, demonstrates how to utilize two threads for parallel
    computing.
