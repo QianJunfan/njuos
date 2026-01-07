@@ -1,3 +1,5 @@
+/* A lightweight pstree implementation for Lab M1. */
+
 #include <stdio.h>
 #include <sys/types.h>
 #include <stdlib.h>
