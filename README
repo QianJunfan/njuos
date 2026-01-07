@@ -1,0 +1,52 @@
+I. Process & Thread
+
+A. Core Difference
+
+  A process is the smallest unit of resource allocation, while a thread is the
+smallest unit of CPU scheduling.
+
+1. Resources and Memory Space 
+
+* Each process has its own independent address space. Processes are isolated.
+* Multiple threads within the same process share the same address space and
+  resources.
+
+2. Overhead and Switching Speed
+
+  Creating a process requires allocating memory and copying page tables.
+However, creating a thread simply involves pointing to existing resources.
+
+  Switching between processes necessitates swapping page tables and the
+CR3 register, as well as flushing the TLB.
+
+  In contrast, a thread context switch only requires swapping registers
+and the stack.
+
+3. Communication
+
+  Due to isolation, Processes require IPC mechanisms (e.g., pipes, messages
+queues, shared memory).
+
+  Threads can communicate directly via global variables or heap memory,
+but synchronization primitives (like Mutexes) are required to prevent race
+conditions.
+
+3. The Linux Kernel's view
+
+  Linux uses the clone() system call for both.
+
+  For processes, memory is not shared;
+  For threads, flags are passed to allow the child to share the parent's 
+memory. Thus, threads in Linux are often called LWPs (Lightweight Processes).
+
+B. Labs
+
+1. sundries/mythread.c, my first multi-threading example.
+
+2. sundries/myfork.c, I tried out detached threads.
+
+3. sundres/parallel.c, demonstrates how to utilize two threads for parallel
+   computing.
+
+4. sundres/mutex.c, a demonstration of two threads competing to modify a global
+   variable simultaneously, using a Mutex to ensure an accurate result.
